@@ -27,6 +27,5 @@ public class LeetCodeSeries1{
         System.out.println("\nHello World!");
         boolean palindrome = palindromeNumber(1221);
         System.out.printf("%n1221 is a palindrome: %b", palindrome);
-
     }
 }
