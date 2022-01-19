@@ -77,7 +77,7 @@ public class Ancestors {
         int[][] A1 = new int[][] { { 4, 7, 6 }, { 2, 3, 1 } };
         int[][] A2 = new int[][] { { 8 }, { 5 }, { 9 } };
         int[][] M5 = TwoMatrixMultiplication(A1, A2);
-        // PrintMatrix(M5);
+        PrintMatrix(M5);
 
         if(M5[0].length == A1[0].length){
             System.out.println("The two matrices can be multiplied " + M5[0].length + " "+ A1[0].length);
@@ -88,6 +88,6 @@ public class Ancestors {
         int[][] A3 = new int[][] { { 1, 5 }, { 2, 7 }, { 3, 4 } };
         int[][] A4 = new int[][] { { 8, 4, 3, 1 }, { 2, 5, 8, 6 } };
         int[][] M6 = TwoMatrixMultiplication(A3, A4);
-        // PrintMatrix(M6);
+        PrintMatrix(M6);
     }
 }
