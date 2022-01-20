@@ -1,4 +1,6 @@
 import java.util.Arrays;
+import java.util.ArrayList;
+
 public class Ancestors {
     // THIS SECTION PRINTS ALL THE DIFFERENT TYPES OF MATRIX
     static void PrintMatrix(int[][] matrix) {
@@ -72,22 +74,78 @@ public class Ancestors {
 
         return newMatrix;
     }
+    static int codeDuplicates(int [] a){
+        ArrayList<Integer> duplicates = new ArrayList<Integer>();
+        for(int i = 0; i < a .length; i++){
+            for(int j = i+1; j < a.length; j++){
+                if(a[i] == a[j]){
+                    duplicates.add(j);
+                }
+            }
+        }
+        System.out.println("\n\nDuplicates are at index: " + duplicates);
+        if(duplicates.size() == 0){
+            return -1;
+        }
+        int smallest = duplicates.get(0);
+        if(duplicates.size() == 1){
+            return a[smallest];
+        }
+        for (int b = 0; b < duplicates.size(); b++) {
+            if (duplicates.get(b) < smallest || duplicates.get(b) == duplicates.get(b++)) {
+                smallest = duplicates.get(b);
+                System.out.println("\n\n\nsmallest here is : " + smallest);
+                return a[smallest];
+            }
+        }
+        return -1;
+    }
+    static int[] largeSmall(Integer[] array){
+        int largest = 0;
+        int smallest = array[0];
+        for(int a : array){
+            if(a > largest){
+                largest = a;
+            }
+            if (a < smallest){
+                smallest = a;
+            }
+        }
+        return new int[]{largest, smallest};
+    }
+    
     public static void main(String[] args) {
         // Multiplying a matrix
         int[][] A1 = new int[][] { { 4, 7, 6 }, { 2, 3, 1 } };
         int[][] A2 = new int[][] { { 8 }, { 5 }, { 9 } };
         int[][] M5 = TwoMatrixMultiplication(A1, A2);
-        PrintMatrix(M5);
+        // PrintMatrix(M5);
 
-        if(M5[0].length == A1[0].length){
-            System.out.println("The two matrices can be multiplied " + M5[0].length + " "+ A1[0].length);
-        }else{
-            System.out.println("The two matrices cannot be multiplied \nM5[0].length " + M5[0].length + "\nA1[0].length "+ A1[0].length);
-        }
+        // if(M5[0].length == A1[0].length){
+        //     System.out.println("The two matrices can be multiplied " + M5[0].length + " "+ A1[0].length);
+        // }else{
+        //     System.out.println("The two matrices cannot be multiplied \nM5[0].length " + M5[0].length + "\nA1[0].length "+ A1[0].length);
+        // }
 
         int[][] A3 = new int[][] { { 1, 5 }, { 2, 7 }, { 3, 4 } };
         int[][] A4 = new int[][] { { 8, 4, 3, 1 }, { 2, 5, 8, 6 } };
         int[][] M6 = TwoMatrixMultiplication(A3, A4);
-        PrintMatrix(M6);
+        // PrintMatrix(M6);
+
+
+
+        int[] a = new int[] {2,1,3,5,3,2};
+        int[] b = new int[] {2,2,2,2,2,2,2,2};
+        int[] c = new int[] {1,2,3,4,5,6,7,8,9,10};
+        int[] d = new int[] {2,2};
+        int[] e = new int[] {8, 4, 6, 2, 6, 4, 7, 9, 5, 8};
+        // int resa = codeDuplicates(a);
+        // int resb = codeDuplicates(b);
+        // int resc = codeDuplicates(c);
+        // int resd = codeDuplicates(d);
+        int rese = codeDuplicates(e);
+        System.out.printf("\nThe result is = rese: %d%n", rese);
+        // System.out.printf("\nThe result is = resa: %d%nresb:  %d%n resc: %d%n", resa, resb, resc);
+        // System.out.printf("\nThe result is:  %d%n%d%n%d%n%d%n", resa, resb, resc, resd);
     }
 }
