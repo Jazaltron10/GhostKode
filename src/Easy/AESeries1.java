@@ -36,6 +36,9 @@ public class AESeries1 {
     }
     
     static String TournamentWinner(ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
+        HashMap<String, Integer> Dictionary = new HashMap<String, Integer>();
+
+        
         String winner = " ";
         String winner_1 = "";
         String winner_2 = "";
