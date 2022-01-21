@@ -92,8 +92,11 @@ public class Ancestors {
             return a[smallest];
         }
         for (int b = 0; b < duplicates.size(); b++) {
-            if (duplicates.get(b) < smallest || duplicates.get(b) == duplicates.get(b++)) {
-                smallest = duplicates.get(b);
+            if (duplicates.get(b) < smallest) {
+                if(duplicates.get(b) == duplicates.get(b++)){
+                    smallest = duplicates.get(b);
+                    return a[smallest];
+                }
                 System.out.println("\n\n\nsmallest here is : " + smallest);
                 return a[smallest];
             }
@@ -139,13 +142,13 @@ public class Ancestors {
         int[] c = new int[] {1,2,3,4,5,6,7,8,9,10};
         int[] d = new int[] {2,2};
         int[] e = new int[] {8, 4, 6, 2, 6, 4, 7, 9, 5, 8};
-        // int resa = codeDuplicates(a);
-        // int resb = codeDuplicates(b);
-        // int resc = codeDuplicates(c);
-        // int resd = codeDuplicates(d);
+        int resa = codeDuplicates(a);
+        int resb = codeDuplicates(b);
+        int resc = codeDuplicates(c);
+        int resd = codeDuplicates(d);
         int rese = codeDuplicates(e);
         System.out.printf("\nThe result is = rese: %d%n", rese);
         // System.out.printf("\nThe result is = resa: %d%nresb:  %d%n resc: %d%n", resa, resb, resc);
-        // System.out.printf("\nThe result is:  %d%n%d%n%d%n%d%n", resa, resb, resc, resd);
+        System.out.printf("\nThe result is:  %d%n%d%n%d%n%d%n", resa, resb, resc, resd);
     }
 }

@@ -1,5 +1,7 @@
 
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 public class StringTings {
 
     public static int commonChild(String s1, String s2) {
@@ -46,6 +48,16 @@ public class StringTings {
 		}
         return false;
     }
+    
+    static void characterCounter(){
+        String s = "Hello World";
+        Map <Character, Integer> dictionary = new HashMap<Character, Integer>();
+        for (char c : s.toCharArray()){
+            dictionary.put(c, dictionary.getOrDefault(c, 0) + 1);
+        }
+        System.out.println("\n\n\n"+dictionary);
+    }
+
     public static void main(String[] args) {
         // Question 1
         int Q1_result = commonChild("james", "john");
@@ -54,5 +66,8 @@ public class StringTings {
         // Question 2
         boolean Q2_result = isValidSubsequence(List.of(1,2,3,4,5), List.of(3,4));
         System.out.printf("%nQ2_result: %b\n", Q2_result);
+
+        // Resource 
+        characterCounter();
     }
 }
