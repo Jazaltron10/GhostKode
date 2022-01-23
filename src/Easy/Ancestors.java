@@ -92,11 +92,12 @@ public class Ancestors {
             return a[smallest];
         }
         for (int b = 0; b < duplicates.size(); b++) {
-            if (duplicates.get(b) < smallest) {
-                if(duplicates.get(b) == duplicates.get(b++)){
+            if (duplicates.get(b) < smallest || duplicates.get(b) == duplicates.get(b++)) {
+                // if(duplicates.get(b) == duplicates.get(b++)){
+                //     smallest = duplicates.get(b);
+                //     return a[smallest];
+                // }
                     smallest = duplicates.get(b);
-                    return a[smallest];
-                }
                 System.out.println("\n\n\nsmallest here is : " + smallest);
                 return a[smallest];
             }

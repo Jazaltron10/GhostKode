@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-
+import java.util.Map;
+import java.util.HashMap;
 public class AESeries2 {
     static String TournamentWinner(ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
         String winner = " ";
@@ -86,7 +87,14 @@ public class AESeries2 {
         // System.out.println("\n\n"+results);
 
         System.out.println("\n\nThe winner is: " + ans);
-
+        String s = "Hello World";
+        characterCounter(s);
     }
-
+    static void characterCounter(String s){
+        Map <Character, Integer> dictionary = new HashMap<Character, Integer>();
+        for (char c : s.toCharArray()){
+            dictionary.put(c, dictionary.getOrDefault(c, 0) + 1);
+        }
+        System.out.println("\n\n\n"+dictionary);
+    }
 }

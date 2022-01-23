@@ -37,71 +37,61 @@ public class AESeries1 {
     
     
     static String TournamentWinner(ArrayList<ArrayList<String>> competitions, ArrayList<Integer> results) {
-        Map <String , Integer> dictionary = new HashMap <String, Integer>();
-        String winner = " ";
-        String winner_1 = "";
-        String winner_2 = "";
-        String winner_3 = "";
-        for (int row = 0; row < competitions.size(); row++) {
-            // System.out.println(competitions.get(row).get(col));
-            System.out.println(competitions.get(row));
-
-            // for each row
-            int c = 0;
-            for (int col = 0; col < competitions.size() - 1; col++) {
-                // for each col in the row
-                // This is for the first row
-                int r = 0;
-                if (results.get(0) == 1) {
-                    winner_1 = " " + competitions.get(r).get(c) + " 3";
-                    System.out.println(winner_1);
-                } else {
-                    winner_1 = " " + competitions.get(r).get(c++) + " 3";
-                    System.out.println(winner_1);
-                }
-            }
-
-            c = 0;
-            for (int col = 0; col < competitions.size() - 1; col++) {
-                // This is for the second row in the tournament
-                int r = 1;
-                if (results.get(1) == 1) {
-                    winner_2 = " " + competitions.get(r).get(c) + " 3";
-                    System.out.println(winner_2);
-                } else {
-                    winner_2 = " " + competitions.get(r).get(c++) + " 3";
-                    System.out.println(winner_2);
-                }
-            }
-            c = 0;
-            for (int col = 0; col < competitions.size() - 1; col++) {
-                // This is for the Third row in the tournament
-                int r = 2;
-                if (results.get(2) == 1) {
-                    winner_3 = " " + competitions.get(r).get(c) + " 3";
-                    System.out.println(winner_3);
-                } else {
-                    winner_3 = " " + competitions.get(r).get(c++) + " 3";
-                    System.out.println(winner_3);
+        Map <String, Integer> dictionary = new HashMap<String, Integer>();
+        for (int i = 0 ; i < competitions.size() ; i++) {
+            for (int j = 0 ; j < competitions.get(0).size(); j++) {
+                String coders = competitions.get(i).get(j);
+                Integer points = dictionary.get(coders);
+                if(!dictionary.containsKey(coders)) {
+                    dictionary.put(coders, 0);
+                }else{
+                    dictionary.put(coders, points + 0);
                 }
             }
         }
-
-        // System.out.println("\n" + winner_1);
-        // System.out.println("\n" + winner_2);
-        // System.out.println("\n" + winner_3);
-        if (winner_1.equals(winner_2) || winner_1.equals(winner_3)) {
-            winner = winner_1;
-        } else if (winner_2.equals(winner_1) || winner_2.equals(winner_3)) {
-            winner = winner_2;
-        } else if (winner_3.equals(winner_1) || winner_3.equals(winner_2)) {
-            winner = winner_3;
-        } else {
-            winner = " Tie ";
+        System.out.println("\n\n\n"+dictionary);
+        
+        // dictionary.get("HTML") = 3;
+        
+        int i = 0;
+            for(String k : dictionary.keySet()){
+                Integer value = dictionary.get(k);
+                String winhome = competitions.get(i).get(0);// home team
+                String winaway = competitions.get(i).get(1);// away team
+                // Here the home team wins
+                if (results.get(i) == 1) {
+                    if (!dictionary.containsKey(winhome)){
+                        dictionary.put( winhome , 0);
+                    }else{
+                        dictionary.put( winhome , value + 3);
+                    }
+                    System.out.println("\n\n\n"+ dictionary);
+                }
+                
+                // Here the away team wins
+                if (results.get(i) == 0) {
+                    System.out.println("\n\n\n"+ dictionary);
+                    if (!dictionary.containsKey(winaway)){
+                        dictionary.put( winaway , 0);
+                    }else{
+                        dictionary.put( winaway , value + 3);
+                    }
+            }i++;
+    }
+        
+        System.out.println("\n\n\n"+ dictionary);
+        String res = " ";
+        Integer largest = 0;
+        for(String winner : dictionary.keySet()){
+            System.out.println(dictionary.get(winner));
+            Integer value = dictionary.get(winner);
+            if(value > largest) largest = value;
+            res = winner;
         }
-        return winner;
+        return res;
     }
     
+
     public static void main(String[] args) {
         // System.out.println("\nHello World!");
         
@@ -120,7 +110,7 @@ public class AESeries1 {
         competitions.add(team_3);
         
 
-        ArrayList<Integer> results = new ArrayList<Integer>(Arrays.asList(1, 1, 1));
+        ArrayList<Integer> results = new ArrayList<Integer>(Arrays.asList(1,1,1));
 
         String ans = TournamentWinner(competitions , results);
         // System.out.println("\n\n"+competitions.size());
