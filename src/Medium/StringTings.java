@@ -1,9 +1,9 @@
 
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Arrays;
+// import java.util.Map;
+// import java.util.HashMap;
+// import java.util.ArrayList;
+// import java.util.Arrays;
 public class StringTings {
 
     public static int commonChild(String s1, String s2) {
@@ -51,42 +51,18 @@ public class StringTings {
         return false;
     }
     
-    static void characterCounter(){
-        ArrayList<ArrayList<String>> competitions = new ArrayList<ArrayList<String>>();
-        ArrayList<String> team_1 = new ArrayList<String>(Arrays.asList("HTML", "C#"));
-        ArrayList<String> team_2 = new ArrayList<String>(Arrays.asList("C#", "Python"));
-        ArrayList<String> team_3 = new ArrayList<String>(Arrays.asList("Python", "HTML"));
-        competitions.add(team_1);
-        competitions.add(team_2);
-        competitions.add(team_3);
-
-        Map <String, Integer> dictionary = new HashMap<String, Integer>();
-        
-        // for (String c : competitions.get(1)) {
-            // dictionary.put(c, dictionary.getOrDefault(c, 0) + 0);
-        // }
-        
-        // System.out.println("\n\n\n"+competitions.size()+" ");
-        for (int i = 0 ; i < competitions.size() ; i++) {
-            for (int j = 0 ; j < competitions.get(0).size(); j++) {
-                String c = competitions.get(i).get(j);
-                dictionary.put(c, dictionary.getOrDefault(c, 0) + 0);
-            }
-        }
-        System.out.println("\n\n\n"+dictionary);
-        // System.out.println("\n\n\n"+ competitions.get(0).get(0));
-    }
+    
 
     public static void main(String[] args) {
         // Question 1
-        // int Q1_result = commonChild("james", "john");
-        // System.out.printf("%nQ1_result: %d\n", Q1_result);
+        int Q1_result = commonChild("james", "john");
+        System.out.printf("%nQ1_result: %d\n", Q1_result);
         
-        // // Question 2
-        // boolean Q2_result = isValidSubsequence(List.of(1,2,3,4,5), List.of(3,4));
-        // System.out.printf("%nQ2_result: %b\n", Q2_result);
+        // Question 2
+        boolean Q2_result = isValidSubsequence(List.of(1,2,3,4,5), List.of(3,4));
+        System.out.printf("%nQ2_result: %b\n", Q2_result);
 
         // Resource 
-        characterCounter();
+        
     }
 }

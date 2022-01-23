@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "src/Medium",
         "src/Easy",
-        "src/Medium"
+        "src/Blind75"
     ]
 }
