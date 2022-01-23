@@ -1,7 +1,9 @@
 
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
+// import java.util.Map;
+// import java.util.HashMap;
+// import java.util.ArrayList;
+// import java.util.Arrays;
 public class StringTings {
 
     public static int commonChild(String s1, String s2) {
@@ -49,14 +51,7 @@ public class StringTings {
         return false;
     }
     
-    static void characterCounter(){
-        String s = "Hello World";
-        Map <Character, Integer> dictionary = new HashMap<Character, Integer>();
-        for (char c : s.toCharArray()){
-            dictionary.put(c, dictionary.getOrDefault(c, 0) + 1);
-        }
-        System.out.println("\n\n\n"+dictionary);
-    }
+    
 
     public static void main(String[] args) {
         // Question 1
@@ -68,6 +63,6 @@ public class StringTings {
         System.out.printf("%nQ2_result: %b\n", Q2_result);
 
         // Resource 
-        characterCounter();
+        
     }
 }

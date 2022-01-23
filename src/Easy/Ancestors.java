@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.ArrayList;
-
+import java.util.Map;
+import java.util.HashMap;
 public class Ancestors {
     // THIS SECTION PRINTS ALL THE DIFFERENT TYPES OF MATRIX
     static void PrintMatrix(int[][] matrix) {
@@ -74,7 +75,8 @@ public class Ancestors {
 
         return newMatrix;
     }
-    static int codeDuplicates(int [] a){
+    // failed firstDuplicates FROM Code Signal 
+    static int firstDuplicates(int [] a){
         ArrayList<Integer> duplicates = new ArrayList<Integer>();
         for(int i = 0; i < a .length; i++){
             for(int j = i+1; j < a.length; j++){
@@ -92,11 +94,8 @@ public class Ancestors {
             return a[smallest];
         }
         for (int b = 0; b < duplicates.size(); b++) {
-            if (duplicates.get(b) < smallest) {
-                if(duplicates.get(b) == duplicates.get(b++)){
-                    smallest = duplicates.get(b);
-                    return a[smallest];
-                }
+            if (duplicates.get(b) < smallest || duplicates.get(b) == duplicates.get(b++)) {
+                smallest = duplicates.get(b);
                 System.out.println("\n\n\nsmallest here is : " + smallest);
                 return a[smallest];
             }
@@ -117,38 +116,89 @@ public class Ancestors {
         return new int[]{largest, smallest};
     }
     
+    static String Run_Length_Encoding(String word) {
+        // where run length encoded string is rulenc
+        Map<Character, Integer> dictionary = new HashMap<Character, Integer>();
+        // This is the histogram section
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            Integer value = dictionary.get(c);
+            if (!dictionary.containsKey(c)) {
+                dictionary.put(c, 1);
+            } else {
+                dictionary.put(c, value + 1);
+            }
+        }
+        System.out.println("\n\n" + dictionary);
+        String rulenc = "";
+        for (Map.Entry<Character, Integer> entry : dictionary.entrySet()) {
+            char c = entry.getKey();
+            int value = entry.getValue();
+            System.out.println("\n The Character " + c + ", Occured " + value + " times");
+            if (value <= 9) {
+                rulenc = rulenc + value + c + " ";
+            } else if (value > 9 && value % 9 == 0) {
+                int multi = value / 9;
+                String prerulenc = "" + (value / multi) + c;
+                rulenc = rulenc + prerulenc.repeat(multi) + " ";
+                // rulenc = rulenc.repeat(multi);
+            } else if (value > 9) {
+                int muly = value / 9;
+                int additional = value % 9;
+                String prerulenca = "" + (9) + c;
+                rulenc = rulenc + prerulenca.repeat(muly) + additional + c + " ";
+            }
+        }
+        System.out.printf("%n %s", rulenc);
+        // System.out.println("\n"+rulenc.getClass().getSimpleName());
+        return rulenc;
+    }
     public static void main(String[] args) {
         // Multiplying a matrix
         int[][] A1 = new int[][] { { 4, 7, 6 }, { 2, 3, 1 } };
         int[][] A2 = new int[][] { { 8 }, { 5 }, { 9 } };
         int[][] M5 = TwoMatrixMultiplication(A1, A2);
-        // PrintMatrix(M5);
+        PrintMatrix(M5);
 
-        // if(M5[0].length == A1[0].length){
-        //     System.out.println("The two matrices can be multiplied " + M5[0].length + " "+ A1[0].length);
-        // }else{
-        //     System.out.println("The two matrices cannot be multiplied \nM5[0].length " + M5[0].length + "\nA1[0].length "+ A1[0].length);
-        // }
+        if(M5[0].length == A1[0].length){
+            System.out.println("The two matrices can be multiplied " + M5[0].length + " "+ A1[0].length);
+        }else{
+            System.out.println("The two matrices cannot be multiplied \nM5[0].length " + M5[0].length + "\nA1[0].length "+ A1[0].length);
+        }
 
         int[][] A3 = new int[][] { { 1, 5 }, { 2, 7 }, { 3, 4 } };
         int[][] A4 = new int[][] { { 8, 4, 3, 1 }, { 2, 5, 8, 6 } };
         int[][] M6 = TwoMatrixMultiplication(A3, A4);
-        // PrintMatrix(M6);
+        PrintMatrix(M6);
 
 
-
+        // failed firstDuplicates FROM Code Signal 
         int[] a = new int[] {2,1,3,5,3,2};
         int[] b = new int[] {2,2,2,2,2,2,2,2};
         int[] c = new int[] {1,2,3,4,5,6,7,8,9,10};
         int[] d = new int[] {2,2};
         int[] e = new int[] {8, 4, 6, 2, 6, 4, 7, 9, 5, 8};
-        int resa = codeDuplicates(a);
-        int resb = codeDuplicates(b);
-        int resc = codeDuplicates(c);
-        int resd = codeDuplicates(d);
-        int rese = codeDuplicates(e);
+        int resa = firstDuplicates(a);
+        int resb = firstDuplicates(b);
+        int resc = firstDuplicates(c);
+        int resd = firstDuplicates(d);
+        int rese = firstDuplicates(e);
         System.out.printf("\nThe result is = rese: %d%n", rese);
-        // System.out.printf("\nThe result is = resa: %d%nresb:  %d%n resc: %d%n", resa, resb, resc);
+        System.out.printf("\nThe result is = resa: %d%nresb:  %d%n resc: %d%n", resa, resb, resc);
         System.out.printf("\nThe result is:  %d%n%d%n%d%n%d%n", resa, resb, resc, resd);
+
+
+        // Q3 failed run length encoding question [it isn't lossless]
+        String Q3 = Run_Length_Encoding("AAAAAAAAAAAAABBCCCCDD");
+            System.out.println("\n\n" + Q3);
+        String Q3b = Run_Length_Encoding(
+            "AAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDFFFFFFFFFFFFFEEEEEEEEEE");
+            System.out.println("\n\n" + Q3b);
+        String Q3c = Run_Length_Encoding(
+            ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;");
+            System.out.println("\n\n" + Q3c);
+        String Q3d = Run_Length_Encoding(
+            "AAAAAAAAAAAAAAAAAABBBBBBBBBBBBeeeeeeeeeeBBCFFFFFFFCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDFFFFFFFFFFFFFEEEEEEEEEE");
+            System.out.println("\n\n" + Q3d);
     }
 }
