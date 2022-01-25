@@ -16,6 +16,7 @@ public class AESeries1 {
                 dictionary.put(c, value + 1);
             }
         }
+        System.out.println("\nd is "+dictionary.size());
         // This section for the first character in the given string/word that occurs
         // once,
         // This can only be achieved after making use of a histogram to log all of the
@@ -36,7 +37,7 @@ public class AESeries1 {
     public static void main(String[] args) {
         System.out.println("\nHello World!");
         int res = firstNonRepeatingCharacter("abacabad");
-        System.out.println(res);
+        System.out.println(res) ;
         
         
     }
