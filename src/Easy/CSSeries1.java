@@ -1,4 +1,6 @@
 import java.util.HashSet;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 public class CSSeries1 {
     // THE FIRST METHOD O(n^2)) TIME AND O(1) SPACE
@@ -65,5 +67,12 @@ public class CSSeries1 {
         System.out.printf("\nThe result is:  %d%n%d%n%d%n%d%n", resa, resb, resc, resd);
 
         // first_non_repeating_character
+        int[] k = new int[] { 10, 6, 8, 4, 9, 1, 7, 2, 5, 3};
+        ArrayList <Integer> v = new ArrayList <Integer>(Arrays.asList(10, 6, 8, 4, 9, 1, 7, 2, 5, 3));
+        System.out.println("" + v);
+        // (int) v;
+        
+        Arrays.sort(k);
+        
     }
 }
