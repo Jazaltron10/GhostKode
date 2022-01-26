@@ -30,9 +30,6 @@ public class AESeries1 {
         
         return -1;
     }
-    
-    
-    
 
     public static void main(String[] args) {
         System.out.println("\nHello World!");

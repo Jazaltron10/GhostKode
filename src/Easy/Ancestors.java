@@ -120,6 +120,7 @@ public class Ancestors {
         return new int[] { largest, smallest };
     }
 
+    // failed run_length_encoding 
     static String Run_Length_Encoding(String word) {
         // where run length encoded string is rulenc
         Map<Character, Integer> dictionary = new HashMap<Character, Integer>();
