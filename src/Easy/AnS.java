@@ -14,6 +14,9 @@ public class AnS {
         name.split(" ,");
         System.out.println(ame);
     }
+
+    // converting from array to string you use ("delimiter").join
+    // converting from string to array you use the .split"delimiter"
     
     public static void main(String[] args) {
         Uniquechar();
