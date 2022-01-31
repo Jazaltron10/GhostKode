@@ -122,8 +122,9 @@ public class CSSeries1 {
         double[] lis = new double[] { 0.3, 0.5, 0.7, 1, 1.3 };
         String mans = solution(15, lis);
         System.out.println("" + mans);
-
+        
         int[][] arr = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
         int[][] barr = rotateImage(arr);
+        System.out.println("" + Arrays.deepToString(barr));
     }
 }
