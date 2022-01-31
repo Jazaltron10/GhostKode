@@ -55,22 +55,41 @@ public class CSSeries1 {
 
     static String solution(int l, double[] fares) {
         int Uber_Discount = 20;
-        String [] options = new String []{"UberX", "UberXL", "UberPlus", "UberBlack", "UberSUV"};
+        String[] options = new String[] { "UberX", "UberXL", "UberPlus", "UberBlack", "UberSUV" };
         double largest = 0;
         String ans = "";
-        for(int i = 0 ; i < fares.length; i++){
+        for (int i = 0; i < fares.length; i++) {
             double res = l * fares[i];
-            if (res > Uber_Discount){
-                    break;
-            } 
-            else if (res <= Uber_Discount && res > largest) {
-                    largest = res;
-                    ans = options[i];
+            if (res > Uber_Discount) {
+                break;
+            } else if (res <= Uber_Discount && res > largest) {
+                largest = res;
+                ans = options[i];
             }
         }
         return ans;
     }
-    
+
+    public static int[][] rotateImage(int[][] a) {
+        int n = a.length;
+        for(int i = 0; i < n ; i++){
+            for(int j = i; j < n ; j++){
+                int temp = a[i][j];
+                a[i][j] = a[j][i];
+                a[j][i] = temp;
+            }
+        }
+        for(int i = 0; i < n ; i++){
+            for(int j = 0; j < n/2; j++){
+                int tem = a[i][j];
+                a[i][j] = a[i][n-1-j];
+                a[i][n-1-j] = tem;
+            }
+        }
+        System.out.print("\n\n" + Arrays.deepToString(a));
+        return a;
+    }
+
     public static void main(String[] args) {
         // firstDuplicates
         int[] a = new int[] { 2, 1, 3, 5, 3, 2 };
@@ -100,8 +119,11 @@ public class CSSeries1 {
             System.out.println("" + (char) i);
         }
 
-        double[] lis = new double[]{0.3, 0.5, 0.7, 1, 1.3};
-        String mans = solution(15 , lis);
+        double[] lis = new double[] { 0.3, 0.5, 0.7, 1, 1.3 };
+        String mans = solution(15, lis);
         System.out.println("" + mans);
+
+        int[][] arr = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+        int[][] barr = rotateImage(arr);
     }
 }
