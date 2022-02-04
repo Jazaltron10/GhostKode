@@ -73,6 +73,7 @@ public static int[][] rotateImage(int[][] a) {
             }
             System.out.print(Arrays.deepToString(a));
             return a;
+            // Double.isNaN("v");
         }
     
     static void printMatrix(int[][] a){
