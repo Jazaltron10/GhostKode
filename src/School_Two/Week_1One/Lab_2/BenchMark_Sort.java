@@ -18,6 +18,10 @@ import java.util.Random;
  * When the arraySize is 100000, the runtime is: 0.017secs
  */
 public class BenchMark_Sort {
+    // Welcome Message 
+    public void Welcome(){
+        System.out.println("\n\nWelcome to the BenchMark_Sort class");
+    }
     // Computing the benchmarks of two different sorting algorithms
     public BenchMark_Sort() {
         int arraySize = 10000; // initializing the arraySize

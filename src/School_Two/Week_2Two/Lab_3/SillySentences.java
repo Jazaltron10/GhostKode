@@ -1,6 +1,6 @@
 package Week_2Two.Lab_3;
 
-import static java.lang.Thread.sleep;
+// import static java.lang.Thread.sleep;
 
 /**
  * The grammar of natural languages such as English exhibits a recursive
