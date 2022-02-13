@@ -629,7 +629,7 @@ public class MosaicCanvas extends Canvas {
 
     public static void main(String[] args) {
         // System.out.println("Hello My G");
-        MosaicCanvas res = new MosaicCanvas();
+        // MosaicCanvas res = new MosaicCanvas();
     }
 
 } // end class MosaicCanvas
