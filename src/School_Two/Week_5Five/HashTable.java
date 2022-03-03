@@ -33,8 +33,27 @@ package Week_5Five;
  * .
  */
 public class HashTable {
+
+    static int run(int[] arr) {
+        int home = 0;
+        int away = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 1) {
+                home++;
+            } else {
+                away++;
+            }
+        }
+        if (home > away || home == away) {
+            return home;
+        } else {
+            return away;
+        }
+
+    }
+
     public static void main(String[] args) {
-        var x =  3 + 12;
-        System.out.println(x);
+        int ans = run(new int[] { 1, 2, 1, 2, 2, 2, 2, 2, 2 });
+        System.out.println(ans);
     }
 }
