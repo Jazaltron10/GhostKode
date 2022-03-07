@@ -9,7 +9,23 @@ import java.util.Iterator;
 
 public class MapInterface {
     private static DecimalFormat df = new DecimalFormat("#.##");
+    static int run(int[] arr) {
+        int home = 0;
+        int away = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == 1) {
+                home++;
+            } else {
+                away++;
+            }
+        }
+        if (home > away || home == away) {
+            return home;
+        } else {
+            return away;
+        }
 
+    }
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<>();
         Random rand = new Random();
