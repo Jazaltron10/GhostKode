@@ -1,3 +1,9 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
 // import java.util.Arrays;
 // import java.util.ArrayList;
 public class LeetCodeSeries1 {
@@ -45,6 +51,34 @@ public class LeetCodeSeries1 {
         System.out.println("\n\n\nThe common child is: " + matrix[first.length()][second.length()]);
     }
 
+    public static List<List<Integer>> sortTheSummary(List<Integer> arr) {
+        // Write your code here
+        // Story: given an array of integers,
+        // input: list of integers
+        // output: list of lists of integers
+        List<List<Integer>> result = new ArrayList<>();
+        Map<Integer, Integer> countMap = new HashMap<>();
+        for (Integer k : arr) {
+            Integer value = countMap.getOrDefault(k, 0);
+            countMap.put(k, value + 1);
+        }
+        // System.out.println(countMap);
+
+        for (Map.Entry<Integer, Integer> entry : countMap.entrySet()) {
+            List<Integer> InnerList = new ArrayList<>();
+            InnerList.add(entry.getKey());
+            InnerList.add(entry.getValue());
+            result.add(InnerList);
+        }
+
+        // System.out.println(InnerList);
+        result.sort((a, b) -> a.get(0) - b.get(0));
+        result.sort((a, b) -> b.get(1) - a.get(1));
+        
+        System.out.println(result);
+        return result;
+    }
+
     public static void main(String[] args) {
         String name = "james";
         System.out.printf("%n%s is a palindrome: %b", name, palindromeTwo(name));
@@ -53,5 +87,7 @@ public class LeetCodeSeries1 {
         System.out.printf("%n1221 is a palindrome: %b", palindrome);
         theCommonChild("HARRY", "SALLY");
         theCommonChild("SHINCHAN", "NOHARAAA");
+
+        sortTheSummary(Arrays.asList(1,4,3,6,5,3,3,2,2));
     }
 }
