@@ -1,3 +1,4 @@
+package Week_5Five.UOSolution;
 /**
  * This file defines a HashTable class. Keys and values in the table are of
  * type String. Keys cannot be null. The default constructor creates a

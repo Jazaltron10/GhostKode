@@ -1,3 +1,4 @@
+package Week_5Five.UOSolution;
 
 /**
  * A little program to test the HashTable class. Note that I
