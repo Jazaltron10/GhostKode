@@ -13,7 +13,8 @@ public class TestStopWatchRunner extends Applet {
    public void init() {
 
       // StopWatchRunner watch = new StopWatchRunner();
-      StopWatchLabel watch = new StopWatchLabel();
+      // StopWatchLabel watch = new StopWatchLabel();
+      Rolex watch = new Rolex();
       watch.setFont(new Font("SansSerif", Font.BOLD, 24));
       watch.setBackground(Color.white);
       watch.setForeground(new Color(180, 0, 0));

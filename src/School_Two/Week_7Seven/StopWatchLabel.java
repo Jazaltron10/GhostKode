@@ -3,21 +3,20 @@ package Week_7Seven;
 import java.awt.event.*;
 import javax.swing.*;
 
-
 /**
- * A custom component that acts as a simple stop-watch.  When the user clicks
- * on it, this componet starts timing.  When the user clicks again,
- * it displays the time between the two clicks.  Clicking a third time
- * starts another timer, etc.  While it is timing, the label just
+ * A custom component that acts as a simple stop-watch. When the user clicks
+ * on it, this componet starts timing. When the user clicks again,
+ * it displays the time between the two clicks. Clicking a third time
+ * starts another timer, etc. While it is timing, the label just
  * displays the message "Timing....".
  */
 public class StopWatchLabel extends JLabel implements MouseListener {
 
-   private long startTime;   // Start time of timer.
-                             //   (Time is measured in milliseconds.)
+   private long startTime; // Start time of timer.
+                           // (Time is measured in milliseconds.)
 
-   private boolean running;  // True when the timer is running.
-
+   private boolean running; // True when the timer is running.
+   
    /**
     * Constructor sets initial text on the label to
     * "Click to start timer." and sets up a mouse listener
@@ -27,8 +26,7 @@ public class StopWatchLabel extends JLabel implements MouseListener {
       super("  Click to start timer.  ", JLabel.CENTER);
       addMouseListener(this);
    }
-   
-   
+
    /**
     * Tells whether the timer is currently running.
     */
@@ -36,7 +34,6 @@ public class StopWatchLabel extends JLabel implements MouseListener {
       return running;
    }
 
-   
    /**
     * React when the user presses the mouse by starting
     * or stopping the timer and changing the text that
@@ -44,14 +41,13 @@ public class StopWatchLabel extends JLabel implements MouseListener {
     */
    public void mousePressed(MouseEvent evt) {
       if (running == false) {
-            // Record the time and start the timer.
+         // Record the time and start the timer.
          running = true;
-         startTime = evt.getWhen();  // Time when mouse was clicked.
+         startTime = evt.getWhen(); // Time when mouse was clicked.
          setText("Timing....");
-      }
-      else {
-            // Stop the timer.  Compute the elapsed time since the
-            // timer was started and display it.
+      } else {
+         // Stop the timer. Compute the elapsed time since the
+         // timer was started and display it.
          running = false;
          long endTime = evt.getWhen();
          double seconds = (endTime - startTime) / 1000.0;
@@ -59,9 +55,16 @@ public class StopWatchLabel extends JLabel implements MouseListener {
       }
    }
 
-   public void mouseReleased(MouseEvent evt) { }
-   public void mouseClicked(MouseEvent evt) { }
-   public void mouseEntered(MouseEvent evt) { }
-   public void mouseExited(MouseEvent evt) { }
+   public void mouseReleased(MouseEvent evt) {
+   }
+
+   public void mouseClicked(MouseEvent evt) {
+   }
+
+   public void mouseEntered(MouseEvent evt) {
+   }
+
+   public void mouseExited(MouseEvent evt) {
+   }
 
 }
