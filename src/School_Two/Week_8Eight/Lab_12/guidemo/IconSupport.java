@@ -53,7 +53,7 @@ public class IconSupport {
 	}
 
 	/**
-	 * Creates a JMenu object used to store menu items 
+	 * Creates a JMenu object used to store menu items
 	 */
 	public JMenu createMenu() {
 		JMenu stamper = new JMenu("Stamper");

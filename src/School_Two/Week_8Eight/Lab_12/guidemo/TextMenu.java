@@ -86,12 +86,13 @@ public class TextMenu extends JMenu {
 		lineHeight.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent evt) {
 				double currentHeight = panel.getTextItem().getLineHeightMultiplier();
-				String s = JOptionPane.showInputDialog(panel, "Multiply the default line height by what amount? ", currentHeight);
+				String s = JOptionPane.showInputDialog(panel, "Multiply the default line height by what amount? ",
+						currentHeight);
 				if (s != null && s.trim().length() > 0) {
 					try {
-						double newLineHeight = Double.parseDouble(s.trim()); 
-						// can throw  NumberFormatException
-						panel.getTextItem().setLineHeightMultiplier(newLineHeight); 
+						double newLineHeight = Double.parseDouble(s.trim());
+						// can throw NumberFormatException
+						panel.getTextItem().setLineHeightMultiplier(newLineHeight);
 						// can throw IllegalArgumentException
 						panel.repaint();
 					} catch (Exception e) {
