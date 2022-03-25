@@ -14,10 +14,10 @@ public class DashTable {
         theArray = new String[size];
         Arrays.fill(theArray, "-1");
     }
+
     public static void main(String[] args) {
 
         DashTable table = new DashTable(30);
-
 
         String[] elementsToAdd = { "120", "213", "175", "214", "278", "498",
                 "227", "802", "900", "723", "299", "1", "18", "909", "890",
@@ -25,7 +25,6 @@ public class DashTable {
                 "401", "415", "450", "50", "620", "660" };
 
         table.hashFunction(elementsToAdd, table.theArray);
-
 
         table.getKey("660");
 
@@ -49,7 +48,7 @@ public class DashTable {
     }
 
     public String getKey(String key) {
-    int arrayIdxHash = Integer.parseInt(key) % 29;
+        int arrayIdxHash = Integer.parseInt(key) % 29;
         while (theArray[arrayIdxHash] != "-1") {
             if (theArray[arrayIdxHash] == key) {
                 System.out.println(key + " was found in index "
@@ -84,7 +83,7 @@ public class DashTable {
                 System.out.print("|      ");
             else
                 System.out.print(String.format("| %3s " + " ", theArray[n]));
-            }
+        }
 
         System.out.println("|");
 
