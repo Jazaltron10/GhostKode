@@ -25,11 +25,11 @@ public class AnS {
         AnS cas = new AnS();
         int result = cas.solution(a);
         System.out.println("result: " + result);
-
     }
 
     int solution(int[] a) {
         int count = 0;
+        
         int i = 0;
         int j = 1;
         int k = 2;
