@@ -3,6 +3,7 @@
         "src/QuickTakes",
         "src/Medium",
         "src/Easy",
-        "src/DataStructures/Blind75"
+        "src/DataStructures/Blind75",
+        "src/Day160"
     ]
 }
