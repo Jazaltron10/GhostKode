@@ -27,6 +27,12 @@ public class AnS {
         System.out.println("result: " + result);
     }
 
+    /**
+     * This particular question was actually asked in my facebook interview 
+     * This was the first of four questions on data structure and algorithms that was asked that day.
+     * 
+     */
+
     int solution(int[] a) {
         int count = 0;
         
