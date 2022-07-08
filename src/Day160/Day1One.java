@@ -24,12 +24,12 @@ public class Day1One {
      * @param args
      */
 
-    public static void twoNumberSum() {
+    public static void twoNumberSum(int[] arr) {
         System.out.println("Helloworld");
     }
 
     public static void main(String[] args) {
-        twoNumberSum();
+        // twoNumberSum();
         System.out.println("Hello");
     }
 }

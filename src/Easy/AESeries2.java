@@ -53,8 +53,3 @@ public class AESeries2 {
 }
 
 
-
-/*
-The world of finance has seen a major shift in the way things are done in the last decade, from the processing of payments to the use of sophisticated Machine Learning and AI algorithms to optimize trading outcomes and model and predict the performance of the market.
-With the advent of web3 and cryptocurrencies, I think the best opportunities for fintech are yet to come and it is my strong belief that with the skills I have I can be a significant contributor to the skillset required by jane street to dominate this field. 
-*/ 
