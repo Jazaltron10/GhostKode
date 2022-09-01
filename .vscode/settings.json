@@ -1,9 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "src/School_Two/Week_9Nine",
         "src/QuickTakes",
         "src/Medium",
         "src/Easy",
-        "src/DataStructures/Blind75",
-        "src/Day160"
+        "src/NeetCode"
     ]
 }
