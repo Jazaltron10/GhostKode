@@ -4,7 +4,7 @@
  * 
  */
 
-public class Day1One {
+public class Q1One {
 
     /**
      * Question: Two Number Sum

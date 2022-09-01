@@ -34,7 +34,7 @@ public class QuickTone1 {
         
         char cow = ' ';
         System.out.println("\n\n 1" + cow);
-        cow = '%' + '2' + '0'; 
+        cow += '%' + '2' + '0'; 
         System.out.println("\n\n 2" + cow);
 
     }
