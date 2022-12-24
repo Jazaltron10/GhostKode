@@ -18,7 +18,7 @@ public class blindArrays {
             } else if (sum < targetSum) {
                 lhs++;
             } else {
-                rhs--;
+                rhs--; 
             }
         }
         return new int[0];

@@ -1,4 +1,4 @@
-public class QuickTone1 {
+public class QuickTake1 {
     public static void stringSpaces(String word) {
         for (char c : word.toCharArray()) {
             // System.out.printf("%n%s", c);
