@@ -74,7 +74,6 @@ public class Ancestors {
             System.out.println("Sorry the two matrices cannot be multiplied");
             return null;
         }
-
         return newMatrix;
     }
 
