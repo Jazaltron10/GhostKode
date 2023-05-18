@@ -31,5 +31,10 @@ public class Q1One {
     public static void main(String[] args) {
         // twoNumberSum();
         System.out.println("Hello");
+        String name  = "Jack";
+        
+        
+        System.out.println(name.length());
+        System.out.println(name.charAt(0));
     }
 }
