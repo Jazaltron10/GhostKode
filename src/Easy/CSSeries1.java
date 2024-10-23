@@ -72,18 +72,18 @@ public class CSSeries1 {
 
     public static int[][] rotateImage(int[][] a) {
         int n = a.length;
-        for(int i = 0; i < n ; i++){
-            for(int j = i; j < n ; j++){
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
                 int temp = a[i][j];
                 a[i][j] = a[j][i];
                 a[j][i] = temp;
             }
         }
-        for(int i = 0; i < n ; i++){
-            for(int j = 0; j < n/2; j++){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n / 2; j++) {
                 int tem = a[i][j];
-                a[i][j] = a[i][n-1-j];
-                a[i][n-1-j] = tem;
+                a[i][j] = a[i][n - 1 - j];
+                a[i][n - 1 - j] = tem;
             }
         }
         System.out.print("\n\n" + Arrays.deepToString(a));
@@ -122,7 +122,7 @@ public class CSSeries1 {
         double[] lis = new double[] { 0.3, 0.5, 0.7, 1, 1.3 };
         String mans = fancyRide(15, lis);
         System.out.println("" + mans);
-        
+
         int[][] arr = new int[][] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
         int[][] barr = rotateImage(arr);
         System.out.println("" + Arrays.deepToString(barr));

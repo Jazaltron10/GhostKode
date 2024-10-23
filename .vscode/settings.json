@@ -2,8 +2,10 @@
     "java.project.sourcePaths": [
         "src/School_Two/Week_9Nine",
         "src/QuickTakes",
+        "src/NeetCode",
         "src/Medium",
         "src/Easy",
-        "src/NeetCode"
+        "src/Blind75",
+        "Sorts"
     ]
 }
