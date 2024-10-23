@@ -51,5 +51,3 @@ public class AESeries2 {
         System.out.println("\n\nThe winner is: " + ans);
     }
 }
-
-

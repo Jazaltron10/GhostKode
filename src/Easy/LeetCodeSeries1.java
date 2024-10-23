@@ -74,7 +74,7 @@ public class LeetCodeSeries1 {
         // System.out.println(InnerList);
         result.sort((a, b) -> a.get(0) - b.get(0));
         result.sort((a, b) -> b.get(1) - a.get(1));
-        
+
         System.out.println(result);
         return result;
     }
@@ -88,6 +88,6 @@ public class LeetCodeSeries1 {
         theCommonChild("HARRY", "SALLY");
         theCommonChild("SHINCHAN", "NOHARAAA");
 
-        sortTheSummary(Arrays.asList(1,4,3,6,5,3,3,2,2));
+        sortTheSummary(Arrays.asList(1, 4, 3, 6, 5, 3, 3, 2, 2));
     }
 }
